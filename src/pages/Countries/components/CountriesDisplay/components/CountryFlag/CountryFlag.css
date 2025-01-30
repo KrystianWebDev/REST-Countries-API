@@ -1,0 +1,33 @@
+:root {
+  --background-color-dark: rgb(43, 57, 69);
+  --elements-dark: rgb(43, 57, 69);
+  --font-color-dark: white;
+}
+.country-card-paragraphs,
+.country-card-name {
+  margin: 0px;
+  padding: 5px;
+  padding-left: 30px;
+}
+.country-card-name {
+  margin: 10px 0px;
+}
+
+@media (max-width: 768px) {
+  .country-card {
+    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    border: 1px hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--background-color-dark);
+    color: var(--font-color-dark);
+    padding-bottom: 40px;
+    max-width: 350px;
+  }
+  .country-flag-img {
+    width: 100%;
+  }
+}
