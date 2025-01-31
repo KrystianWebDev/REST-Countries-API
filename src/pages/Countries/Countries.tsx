@@ -1,4 +1,4 @@
-import CountriesDisplay from './components/CountriesDisplay/CountriesDisplay';
+import { CountriesDisplay } from './components/CountriesDisplay/CountriesDisplay';
 
 export function Countries() {
   return (

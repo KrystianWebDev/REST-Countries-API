@@ -5,21 +5,30 @@ function CountryFlag({
   population,
   region,
   capital,
-  flag,
+  flags,
 }: Country) {
   return (
     <section className="country-card">
       <img
         className="country-flag-img"
-        src={flag}
-        alt={`Flag of ${name}`}
-      ></img>
-      <h2 className="country-card-name">{name}</h2>
+        src={flags.svg}
+        alt={`Flag of ${name.common}`}
+      />
+      <h2 className="country-card-name">{name.common}</h2>
       <p className="country-card-paragraphs">
-        Population: {population}
+        <span className="country-card-label">Population: </span>{' '}
+        <span className="country-card-value">
+          {population.toLocaleString()}
+        </span>
       </p>
-      <p className="country-card-paragraphs">Region: {region}</p>
-      <p className="country-card-paragraphs">Capital: {capital}</p>
+      <p className="country-card-paragraphs">
+        <span className="country-card-label">Region: </span>
+        <span className="country-card-value">{region}</span>
+      </p>
+      <p className="country-card-paragraphs">
+        <span className="country-card-label">Capital: </span>
+        <span className="country-card-value">{capital}</span>
+      </p>
     </section>
   );
 }

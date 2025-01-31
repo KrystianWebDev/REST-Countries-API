@@ -1,44 +1,57 @@
 import { Country } from '@interfaces/types';
 import React from 'react';
-import CountryFlag from './components/CountryFlag/CountryFlag';
-import { useCountriesFilter } from '../../hooks/useCountriesFilter';
-import { countriesData } from './CountriesDisplay.const';
-function CountriesDisplay() {
+import { useFetch } from '../../hooks/useFetch';
+import { useDebounce } from '../../hooks/useDebounce';
+import { SearchInput } from './components/SearchInput/SearchInput';
+import { CountriesList } from './components/CountriesList/CountriesList';
+import { RegionFilter } from './components/RegionFilter/RegionFilter';
+import './CountriesDisplay.css';
+export function CountriesDisplay() {
   const [searchValue, setSearchValue] = React.useState<string>('');
-
-  const arrayFlags = React.useMemo(() => {
-    const cokolwiek = searchValue;
-    const arrayFlags: Country[] = countriesData.map((country) => ({
-      name: country.name,
-      population: country.population,
-      region: country.region,
-      capital: country.capital || 'No capital',
-      numericCode: country.numericCode,
-      flag: country.flags.svg,
-      cokolwiek: cokolwiek,
-    }));
-    return arrayFlags;
-  }, [searchValue]);
-
-  const filteredCountries = useCountriesFilter(
-    arrayFlags,
-    searchValue
+  const [selectedRegion, setSelectedRegion] =
+    React.useState<string>('');
+  const debouncedSearch = useDebounce(searchValue, 500);
+  const {
+    data: countries,
+    loading,
+    error: fetchError,
+  } = useFetch<Country[]>(
+    !debouncedSearch
+      ? 'https://restcountries.com/v3.1/all?fields=name,population,region,capital,flags,cca3'
+      : `https://restcountries.com/v3.1/name/${debouncedSearch}?fields=name,population,region,capital,flags,cca3`,
+    { initialValue: [] }
   );
+
+  const filteredCountries = React.useMemo(() => {
+    if (!countries) return [];
+    return countries.filter(
+      (country) =>
+        !selectedRegion || country.region === selectedRegion
+    );
+  }, [countries, selectedRegion]);
 
   return (
     <>
-      <input
-        value={searchValue}
-        onChange={(event) => setSearchValue(event.target.value)}
-      ></input>
-      {filteredCountries.map((country) => (
-        <CountryFlag
-          key={country.numericCode}
-          {...country}
-        ></CountryFlag>
-      ))}
+      <section className="controls-container">
+        <SearchInput
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+        ></SearchInput>
+        <RegionFilter
+          selectedRegion={selectedRegion}
+          setSelectedRegion={setSelectedRegion}
+        ></RegionFilter>
+      </section>
+      {fetchError && (
+        <p>
+          Błąd: Nie znaleziono Państwa, które pasuje do wyszukiwania
+        </p>
+      )}
+      {loading && <p>Ładowanie danych...</p>}
+
+      <section className="country-card-grid">
+        <CountriesList countries={filteredCountries}></CountriesList>
+      </section>
     </>
   );
 }
-
-export default CountriesDisplay;

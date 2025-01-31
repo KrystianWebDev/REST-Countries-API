@@ -1,0 +1,17 @@
+.region-filter {
+  background-color: rgb(43, 57, 69);
+  color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: hidden;
+  width: 12rem;
+  margin-left: 0;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .region-filter {
+    margin-left: 1rem;
+    margin-top: 0;
+  }
+}
