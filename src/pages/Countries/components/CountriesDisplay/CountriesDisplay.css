@@ -1,14 +1,30 @@
+@import '../../../../variables.css';
+
+.controls-container {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+@media (min-width: 320px) {
+  .country-card-grid {
+    justify-items: center;
+  }
+  .controls-container {
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) {
+  .controls-container {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 @media (min-width: 1024px) {
   .country-card-grid {
-    width: 100%;
+    /* width: 100%; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-  }
-  .controls-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin: 25px;
   }
 }

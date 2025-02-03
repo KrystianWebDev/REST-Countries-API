@@ -16,7 +16,7 @@ function CountryFlag({
       />
       <h2 className="country-card-name">{name.common}</h2>
       <p className="country-card-paragraphs">
-        <span className="country-card-label">Population: </span>{' '}
+        <span className="country-card-label">Population: </span>
         <span className="country-card-value">
           {population.toLocaleString()}
         </span>

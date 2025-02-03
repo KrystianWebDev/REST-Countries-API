@@ -1,4 +1,5 @@
 import './RegionFilter.css';
+
 const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
 interface RegionFilter {
