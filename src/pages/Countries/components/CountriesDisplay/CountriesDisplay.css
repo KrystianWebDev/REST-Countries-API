@@ -1,0 +1,14 @@
+@media (min-width: 1024px) {
+  .country-card-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .controls-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+  }
+}

@@ -1,0 +1,10 @@
+.search-input {
+  box-sizing: border-box;
+  background-color: var(--background-color-dark);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  color: var(--font-color-dark);
+  width: 100%;
+  max-width: 480px;
+}
