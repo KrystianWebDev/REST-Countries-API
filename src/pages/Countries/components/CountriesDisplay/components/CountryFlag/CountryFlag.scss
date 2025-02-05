@@ -1,4 +1,4 @@
-@import url('/src/Themes/theme.css');
+@import '/src/Themes/theme.scss';
 
 .country-card-label {
   font-weight: 600;
@@ -24,12 +24,12 @@
   border: 1px hidden;
   border-radius: 5px;
   overflow: hidden;
-  background-color: var(--card-background);
-  color: var(--font-color-dark);
+  background-color: var(--elements-color);
+  color: var(--text-color);
   width: 100%;
   padding-bottom: 50px;
 }
-@media (min-width: 320px) {
+@media (min-width: map-get($breakpoints, 'mobile')) {
   .country-card {
     max-width: 350px;
     margin: 40px;
@@ -41,7 +41,7 @@
   aspect-ratio: 16/9;
   object-fit: cover;
 }
-@media (min-width: 1024px) {
+@media (min-width: map-get($breakpoints, 'desktop')) {
   .country-card {
     width: 95%;
   }

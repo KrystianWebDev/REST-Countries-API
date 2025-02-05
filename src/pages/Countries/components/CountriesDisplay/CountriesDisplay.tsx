@@ -4,7 +4,7 @@ import { CountriesList } from './components/CountriesList/CountriesList';
 import { RegionFilter } from './components/RegionFilter/RegionFilter';
 import { useFetchCountries } from './hooks/useFetchCountries';
 
-import './CountriesDisplay.css';
+import './CountriesDisplay.scss';
 
 export function CountriesDisplay() {
   const [searchValue, setSearchValue] = React.useState<string>('');

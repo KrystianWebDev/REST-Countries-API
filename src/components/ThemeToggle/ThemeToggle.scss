@@ -1,0 +1,21 @@
+.theme-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--elements-color);
+  width: 100%;
+  margin-bottom: 20px;
+}
+.theme-toggle {
+  border-radius: 5px;
+  border: hidden;
+  height: 20px;
+  width: 100px;
+  color: var(--text-color);
+  background-color: var(--elements-color);
+  font-weight: 600;
+  cursor: pointer;
+}
+.h1-header {
+  color: var(--text-color);
+}

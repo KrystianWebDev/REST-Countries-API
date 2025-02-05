@@ -1,11 +1,11 @@
-@import '../../../../variables.css';
+@import '/src/Themes/theme.scss';
 
 .controls-container {
   width: 100%;
   display: flex;
   gap: 20px;
 }
-@media (min-width: 320px) {
+@media (min-width: map-get($breakpoints, 'mobile')) {
   .country-card-grid {
     justify-items: center;
   }
@@ -13,16 +13,15 @@
     flex-direction: column;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: map-get($breakpoints, 'tablet')) {
   .controls-container {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: map-get($breakpoints, 'desktop')) {
   .country-card-grid {
-    /* width: 100%; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;

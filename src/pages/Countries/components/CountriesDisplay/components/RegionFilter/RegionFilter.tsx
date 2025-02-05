@@ -1,4 +1,4 @@
-import './RegionFilter.css';
+import './RegionFilter.scss';
 
 const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 

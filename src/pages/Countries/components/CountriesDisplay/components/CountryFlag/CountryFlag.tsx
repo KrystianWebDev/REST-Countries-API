@@ -1,5 +1,7 @@
 import { Country } from '@interfaces/types';
-import './CountryFlag.css';
+
+import './CountryFlag.scss';
+
 function CountryFlag({
   name,
   population,
