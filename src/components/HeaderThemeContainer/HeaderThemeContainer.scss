@@ -1,0 +1,12 @@
+.header-theme-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--elements-color);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.h1-header {
+  color: var(--text-color);
+}

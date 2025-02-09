@@ -1,4 +1,4 @@
-import { Country } from '@interfaces/types';
+import { Country } from '@types/types';
 import CountryFlag from '../CountryFlag/CountryFlag';
 
 interface CountriesListProps {

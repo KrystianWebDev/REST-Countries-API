@@ -24,7 +24,8 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/pages/Countries/components/*"],
-      "@interfaces/*": ["src/types/*"]
+      "@types/*": ["src/types/*"],
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src"]

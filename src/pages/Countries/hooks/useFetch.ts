@@ -27,7 +27,7 @@ export function useFetch<T>(url: string, options?: Options<T>) {
         const response = await fetch(url, {
           signal: abortController.signal,
         });
-
+        console.log(response);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -40,7 +40,6 @@ export function useFetch<T>(url: string, options?: Options<T>) {
         });
       } catch (error) {
         if (error instanceof Error && error.name === 'AbortError') {
-          //type guard <- wrócimy (:
           return;
         }
 

@@ -3,8 +3,10 @@ import { SearchInput } from './components/SearchInput/SearchInput';
 import { CountriesList } from './components/CountriesList/CountriesList';
 import { RegionFilter } from './components/RegionFilter/RegionFilter';
 import { useFetchCountries } from './hooks/useFetchCountries';
+import { Toast } from '@/components/Toast/Toast';
 
 import './CountriesDisplay.scss';
+import { LoadingOverlay } from '@/components/LoadingOverlay/LoadingOverlay';
 
 export function CountriesDisplay() {
   const [searchValue, setSearchValue] = React.useState<string>('');
@@ -23,6 +25,12 @@ export function CountriesDisplay() {
 
   return (
     <>
+      {
+        <LoadingOverlay
+          isLoading={loading}
+          message="Loading countries..."
+        />
+      }
       <section className="controls-container">
         <SearchInput
           searchValue={searchValue}
@@ -34,11 +42,12 @@ export function CountriesDisplay() {
         />
       </section>
       {fetchError && (
-        <p>
-          Błąd: Nie znaleziono Państwa, które pasuje do wyszukiwania
-        </p>
+        <Toast
+          message="Error: There is no Country matching a searching value"
+          type="error"
+          duration={null}
+        />
       )}
-      {loading && <p>Ładowanie danych...</p>}
 
       <section className="country-card-grid">
         <CountriesList countries={filteredCountries} />

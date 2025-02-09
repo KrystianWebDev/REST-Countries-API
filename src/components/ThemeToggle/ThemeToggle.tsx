@@ -10,8 +10,7 @@ export function ThemeToggle({
   toggleTheme,
 }: ThemeToggleProps) {
   return (
-    <section className="theme-toggle-container">
-      <h1 className="h1-header">Where in The World?</h1>
+    <>
       <button
         onClick={toggleTheme}
         value={theme}
@@ -19,6 +18,6 @@ export function ThemeToggle({
       >
         {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
       </button>
-    </section>
+    </>
   );
 }

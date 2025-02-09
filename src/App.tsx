@@ -1,21 +1,21 @@
-import { ThemeToggle } from './components/ThemeToggle/ThemeToggle';
 import { Countries } from './pages/Countries/Countries';
-import React from 'react';
+import { CountryDetail } from './pages/CountryDetails/CountryDetails';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HeaderThemeContainer } from './components/HeaderThemeContainer/HeaderThemeContainer';
 
 function App() {
-  const [theme, setTheme] = React.useState('dark');
-
-  React.useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  function toggleTheme() {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  }
   return (
     <>
-      <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-      <Countries />
+      <HeaderThemeContainer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Countries />} />
+          <Route
+            path="/country/:countryCode"
+            element={<CountryDetail />}
+          />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

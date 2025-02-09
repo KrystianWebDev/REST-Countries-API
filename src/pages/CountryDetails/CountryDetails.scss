@@ -1,0 +1,96 @@
+@import '/src/Themes/theme.scss';
+
+.country-details {
+  padding: 2rem;
+  color: var(--text-color);
+}
+
+.back-button {
+  background-color: var(--elements-color);
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.country-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+.country-flag {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.country-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.country-name {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.country-details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.detail-item {
+  margin-bottom: 0.5rem;
+}
+
+.detail-label {
+  font-weight: 600;
+}
+
+.borders-section {
+  margin-top: 2rem;
+}
+
+.borders-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.borders-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.border-link {
+  background-color: var(--elements-color);
+  padding: 0.25rem 1.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+@media (min-width: map-get($breakpoints, 'tablet')) {
+  .country-details-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: map-get($breakpoints, 'desktop')) {
+  .country-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}

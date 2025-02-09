@@ -1,4 +1,4 @@
-import { Country } from '@interfaces/types';
+import { Country } from '@types/types';
 import { useFetch } from '../../../hooks/useFetch.ts';
 import { useDebounce } from '../../../hooks/useDebounce.ts';
 const apiConfig = {

@@ -1,20 +1,29 @@
+import { Region } from '@types/types';
 import './RegionFilter.scss';
 
-const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
+const regions = [
+  Region.Africa,
+  Region.Americas,
+  Region.Asia,
+  Region.Europe,
+  Region.Oceania,
+];
 
-interface RegionFilter {
-  selectedRegion: string;
-  setSelectedRegion: (region: string) => void;
+interface RegionFilterProps {
+  selectedRegion: Region;
+  setSelectedRegion: (region: Region) => void;
 }
 
 export function RegionFilter({
   selectedRegion,
   setSelectedRegion,
-}: RegionFilter) {
+}: RegionFilterProps) {
   return (
     <select
       value={selectedRegion}
-      onChange={(event) => setSelectedRegion(event.target.value)}
+      onChange={(event) =>
+        setSelectedRegion(event.target.value as Region)
+      }
       className="region-filter"
     >
       <option value="">Filter by Region</option>
@@ -26,3 +35,4 @@ export function RegionFilter({
     </select>
   );
 }
+// TODO: Implement region filtering using backend API instead of frontend filtering
