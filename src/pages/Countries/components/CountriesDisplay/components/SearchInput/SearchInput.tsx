@@ -1,9 +1,12 @@
 import React from 'react';
-import './SearchInput.css';
+
+import './SearchInput.scss';
+
 interface SearchInputProps {
   searchValue: string;
   setSearchValue: React.Dispatch<React.SetStateAction<string>>;
 }
+
 export function SearchInput({
   searchValue,
   setSearchValue,

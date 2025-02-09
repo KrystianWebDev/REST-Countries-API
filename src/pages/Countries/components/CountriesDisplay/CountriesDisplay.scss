@@ -1,0 +1,42 @@
+@import '/src/Themes/theme.scss';
+@import '/src/variables.scss';
+
+.controls-container {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.country-card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (min-width: map-get($breakpoints, 'mobile')) {
+  .country-card-grid {
+    justify-items: center;
+  }
+  .controls-container {
+    flex-direction: column;
+  }
+}
+@media (min-width: map-get($breakpoints, 'tablet')) {
+  .controls-container {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media (min-width: map-get($breakpoints, 'desktop')) {
+  .country-card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px 40px;
+  }
+}

@@ -1,0 +1,72 @@
+@import '/src/Themes/theme.scss';
+.country-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+.country-card-label {
+  font-weight: 600;
+}
+.country-card-value {
+  opacity: 0.7;
+}
+.country-card-paragraphs,
+.country-card-name {
+  margin: 0px;
+  padding: 5px;
+  padding-left: 20px;
+}
+.country-card-name {
+  margin: 10px 0px;
+}
+.country-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 0px;
+  border: 1px hidden;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--elements-color);
+  color: var(--text-color);
+  width: 100%;
+  padding-bottom: 50px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    .country-card-value {
+      opacity: 1;
+    }
+  }
+
+  &:focus-within {
+    outline: 2px solid var(--text-color);
+    outline-offset: 2px;
+    transform: scale(1.03);
+  }
+
+  &:active {
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+}
+@media (min-width: map-get($breakpoints, 'mobile')) {
+  .country-card {
+    max-width: 350px;
+    margin: 20px;
+  }
+}
+
+.country-flag-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+@media (min-width: map-get($breakpoints, 'desktop')) {
+  .country-card {
+    width: 100%;
+    margin: 0;
+  }
+}

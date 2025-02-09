@@ -1,0 +1,14 @@
+@import '/src/variables.scss';
+:root {
+  --elements-color: #{map-get($dark-theme-colors, 'elements')};
+  --background-color: #{map-get($dark-theme-colors, 'background')};
+  --text-color: #{map-get($dark-theme-colors, 'text')};
+  background-color: var(--background-color);
+  transition: all 0.3s ease;
+  font-family: 'Nunito Sans', serif;
+}
+[data-theme='light'] {
+  --elements-color: #{map-get($light-theme-colors, 'elements')};
+  --background-color: #{map-get($light-theme-colors, 'background')};
+  --text-color: #{map-get($light-theme-colors, 'text')};
+}

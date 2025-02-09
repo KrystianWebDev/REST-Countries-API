@@ -1,5 +1,5 @@
-//Wyszukiwanie po tekście po stronie frontu
-import { Country } from '@interfaces/types';
+//Text search on the frontend side
+import { Country } from '@types/types';
 import React from 'react';
 
 export const useCountriesFilter = (
